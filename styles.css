@@ -234,3 +234,283 @@
   color: #ff6b35;
   font-weight: bold;
 }
+
+.latest {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.latest h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+.bg1 {
+  background: url("./assets/deal-ana.png") no-repeat center center;
+  background-size: cover;
+  padding: 5rem 0;
+}
+.bg2 {
+  background: url("./assets/deal-bloom.png") no-repeat center center;
+  background-size: cover;
+  padding: 5rem 0;
+}
+.bg3 {
+  background: url("./assets/deal-zabo.png") no-repeat center center;
+  background-size: cover;
+  padding: 5rem 0;
+}
+.image {
+  display: flex;
+  gap: 0.2rem;
+}
+.sub {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+/* Newsletter Section */
+.newsletter {
+  background: url("assets/news-letter-bg.png") center/cover;
+  padding: 5rem 0;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.newsletter::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.newsletter-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.newsletter h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.newsletter p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.newsletter-form {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.newsletter-form button {
+  background: #ff6b35;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background: #e55a2b;
+}
+
+/* Footer */
+.footer {
+  background: #333;
+  color: white;
+  padding: 3rem 0;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo img {
+  height: 40px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ff6b35;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  transition: opacity 0.3s ease;
+}
+
+.social-icons img:hover {
+  opacity: 0.7;
+}
+
+.latest {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f4f7;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+.containerr {
+  width: 90%;
+  max-width: 1200px;
+  margin-top: 50px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+headerr {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.header-line {
+  border-top: 2px dotted #007bff;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+headerr h1 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.orange-text {
+  color: #ff8c00; /* A shade of orange */
+}
+
+headerr p {
+  color: #666;
+  font-size: 1.1em;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.5;
+  border: 1px dashed #007bff; /* Blue dashed border */
+  padding: 15px 20px;
+  margin-top: 20px;
+}
+
+.deals-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.deal-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.deal-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.deal-card .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  text-align: center;
+}
+
+.deal-card:hover .overlay {
+  opacity: 1;
+}
+
+.deal-card .overlay p {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.deal-card .overlay button {
+  background-color: #fff;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.deal-card .overlay button:hover {
+  background-color: #eee;
+}
+
+.small-card {
+  grid-column: span 1;
+}
+
+.large-card {
+  grid-column: span 1;
+  grid-row: span 2;
+}
