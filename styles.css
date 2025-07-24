@@ -7,8 +7,8 @@
 
 .nav-container {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 0 2rem;
+  margin: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -28,10 +28,10 @@
   text-decoration: none;
   color: #827d7d;
   font-weight: 500;
-  transition: color 0.3s ease;
 }
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 .bold {
@@ -40,21 +40,24 @@ a {
 }
 
 .hero {
-  background-color: transparent;
-  padding: 4rem 0;
+  margin: 1rem 4rem;
+  background-color: #f9f9f9;
+  padding: 0 0;
 }
 
 .hero-container {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 3rem;
+
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 3rem;
   align-items: center;
+  padding: 2rem 2rem;
+  margin: 3rem 3rem;
 }
 
-.hero-content h1 {
+.hero-content h1,
+.mm h1 {
   font-size: 3.5rem;
   font-weight: bold;
   line-height: 1.2;
@@ -82,7 +85,9 @@ a {
 
 .plants-container {
   max-width: 1200px;
-  padding: 0 2rem;
+  padding: 2rem 2rem;
+  margin: 2rem 3rem;
+  gap: 2rem;
 }
 
 .section-header {
@@ -104,7 +109,7 @@ a {
 .plants-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 .plant-card {
@@ -137,6 +142,7 @@ a {
   color: white;
   border: none;
   padding: 0.8rem 0.8rem;
+  margin-bottom: 2rem;
 
   width: 100%;
 }
@@ -144,8 +150,9 @@ a {
 /* Plant Lover Section */
 /* Plant Lover Section */
 .plant-lover {
-  padding: 5rem 0;
   background: #fff;
+  padding: 2rem 2rem;
+  margin: 2rem 1rem;
 }
 
 .lover-container {
@@ -164,7 +171,7 @@ a {
 
 .lover-image img {
   width: 100%;
-  height: auto;
+  height: 70vh;
 }
 
 .trusted-badge {
@@ -281,35 +288,11 @@ a {
   box-sizing: border-box;
 }
 
-/* .newsletter-form {
-  display: flex;
-  max-width: 500px;
-  margin: 0 auto;
-  gap: 1rem;
-} */
-
-/* .newsletter-form input {
-  flex: 1;
-  padding: 1rem;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-} */
-
-/* .newsletter-form button {
-  background: #ff6b35;
-  color: white;
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  font-weight: 600;
-} */
-
 /* Footer */
 .footer {
   background: #fffefe;
   color: rgb(8, 8, 8);
-  margin: 2rem;
+  margin: 3rem;
   padding: 2rem;
   height: fit-content;
 }
@@ -362,18 +345,24 @@ a {
   text-align: center;
   align-items: flex-start;
   min-height: 100vh;
+  padding: 2rem;
+  padding: 2rem 2rem;
+  margin: 2rem 3rem;
 }
 
 .container {
-  gap: 2rem;
-}
+  
 
 .header h1 {
   font-size: 2.5em;
   color: #333;
-  margin-bottom: 10px;
 }
 
+.mm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 .deal-card {
   position: relative;
   border-radius: 8px;
@@ -429,7 +418,7 @@ a {
   gap: 0.5rem;
   height: 70vh;
   width: 100%;
-  padding-top: 2rem;
+  padding-top: 1rem;
 }
 
 @media (max-width: 768px) {
@@ -487,9 +476,9 @@ a {
     text-align: left;
   }
   .social-icons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    align-items: left;
-    gap: 0;
+    display: flex;
+    justify-content: flex-start; /* Align to the left */
+    align-items: center;
+    gap: 1rem;
   }
 }
