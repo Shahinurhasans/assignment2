@@ -55,8 +55,11 @@
   </head>
   <body class="font-sans bg-white">
     <!-- Navbar -->
-    <nav class="mx-14 bg-white shadow-sm border-b border-gray-100 top-0 z-50">
-      <div class="max-w-7xl sm:px-6 lg:px-8">
+    <!-- Navbar -->
+    <nav
+      class="mx-4 md:mx-14 bg-white shadow-sm border-b border-gray-100 top-0 z-50"
+    >
+      <div class="max-w-7xl px-4 md:px-6 lg:px-8 mx-auto">
         <div class="flex justify-between items-center h-16">
           <!-- Logo -->
           <div class="flex items-center">
@@ -83,24 +86,22 @@
           <div
             class="md:hidden flex items-center space-x-2 px-3 py-2 rounded-lg"
           >
-            <div class="flex items-center space-x-2 px-4 py-2 rounded-lg">
-              <i class="fa-solid fa-cart-shopping"></i>
-              <span>Cart($56)</span>
-            </div>
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>Cart($56)</span>
           </div>
         </div>
       </div>
     </nav>
 
     <!-- Banner Section -->
-    <section class="mx-8 mt-0 lg:py-20">
-      <div class="max-w-7xl mx-auto mt-4 sm:px-6 lg:px-8">
+    <section class="mx-4 md:mx-8 mt-0 py-10 md:py-20">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <div class="bg-[#f6f4f2] px-6 py-12 rounded-lg">
-          <div class="flex flex-col lg:flex-row items-center gap-8">
+          <div class="flex flex-col md:flex-row items-center gap-8">
             <!-- Text Content -->
-            <div class="lg:w-1/2 lg:pr-12 text-left order-2 lg:order-1">
+            <div class="md:w-1/2 md:pr-12 text-left order-2 md:order-1">
               <h1
-                class="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight"
+                class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight"
               >
                 ALWAYS <span class="text-[#E95A08]">FRESH</span><br />
                 <span class="text-[#E95A08]">FLOWERS</span>
@@ -113,11 +114,11 @@
             </div>
 
             <!-- Image -->
-            <div class="lg:w-1/2 order-1 lg:order-2">
+            <div class="md:w-1/2 order-1 md:order-2">
               <img
                 src="assets/hero-flower.png"
                 alt="Fresh Flowers"
-                class="w-full h-auto max-w-md mx-auto lg:max-w-full"
+                class="w-full h-auto max-w-md mx-auto md:max-w-full"
               />
             </div>
           </div>
@@ -126,13 +127,12 @@
     </section>
 
     <!-- Our Plants Section -->
-
     <section class="py-6 bg-white">
-      <div class="max-w-7xl mx-auto px-8 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto px-4 md:px-8">
         <!-- Section Header -->
         <div class="text-center mb-12">
-          <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            <span class="text-orange-primary">Our</span> Plants
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <span class="text-[#E95A08]">Our</span> Plants
           </h2>
           <p class="text-lg text-gray-600 max-w-2xl mx-auto">
             Explore our beautiful collection of plants and flowers, carefully
@@ -141,14 +141,11 @@
         </div>
 
         <!-- Plants Grid -->
-        <!-- Plants Grid -->
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-1 gap-y-1">
-
-          <!-- Repeatable Plant Card -->
-          <!-- CARD START -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <!-- Plant Card - Repeat as needed -->
           <div class="text-center overflow-hidden">
             <div class="bg-white shadow rounded-lg">
-              <div class="aspect-square p-0">
+              <div class="aspect-square">
                 <img
                   src="assets/sample-flower-image.png"
                   alt="Red Rose Bouquet"
@@ -161,33 +158,7 @@
                 </h3>
                 <p class="font-bold text-lg mb-3">$29.99</p>
                 <button
-                  class="w-full bg-orange-primary text-black py-2 font-medium border-t border-gray-200"
-                >
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-          </div>
-          <!-- CARD END -->
-
-
-
-          <div class="text-center overflow-hidden">
-            <div class="bg-white shadow rounded-lg">
-              <div class="aspect-square p-0">
-                <img
-                  src="assets/sample-flower-image.png"
-                  alt="Red Rose Bouquet"
-                  class="w-full h-full object-contain"
-                />
-              </div>
-              <div class="px-5 pb-4">
-                <h3 class="font-semibold text-gray-900 mb-2">
-                  Red Rose Bouquet
-                </h3>
-                <p class="font-bold text-lg mb-3">$29.99</p>
-                <button
-                  class="w-full bg-orange-primary text-black py-2 font-medium border-t border-gray-200"
+                  class="w-full bg-[#E95A08] text-black py-2 font-medium border-t border-gray-200"
                 >
                   Add to Cart
                 </button>
@@ -195,126 +166,24 @@
             </div>
           </div>
 
-
-
+          <!-- Repeat this card block for other products -->
 
           <div class="text-center overflow-hidden">
             <div class="bg-white shadow rounded-lg">
-              <div class="aspect-square p-0">
+              <div class="aspect-square">
                 <img
                   src="assets/sample-flower-image.png"
                   alt="Red Rose Bouquet"
                   class="w-full h-full object-contain"
                 />
               </div>
-              <div class="px-5 pb-4">
+              <div class="px-4 pb-4">
                 <h3 class="font-semibold text-gray-900 mb-2">
                   Red Rose Bouquet
                 </h3>
                 <p class="font-bold text-lg mb-3">$29.99</p>
                 <button
-                  class="w-full bg-orange-primary text-black py-2 font-medium border-t border-gray-200"
-                >
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-          </div>
-
-
-
-          <div class="text-center overflow-hidden">
-            <div class="bg-white shadow rounded-lg">
-              <div class="aspect-square p-0">
-                <img
-                  src="assets/sample-flower-image.png"
-                  alt="Red Rose Bouquet"
-                  class="w-full h-full object-contain"
-                />
-              </div>
-              <div class="px-5 pb-4">
-                <h3 class="font-semibold text-gray-900 mb-2">
-                  Red Rose Bouquet
-                </h3>
-                <p class="font-bold text-lg mb-3">$29.99</p>
-                <button
-                  class="w-full bg-orange-primary text-black py-2 font-medium border-t border-gray-200"
-                >
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-          </div>
-
-
-
-          <div class="text-center overflow-hidden">
-            <div class="bg-white shadow rounded-lg">
-              <div class="aspect-square p-0">
-                <img
-                  src="assets/sample-flower-image.png"
-                  alt="Red Rose Bouquet"
-                  class="w-full h-full object-contain"
-                />
-              </div>
-              <div class="px-5 pb-4">
-                <h3 class="font-semibold text-gray-900 mb-2">
-                  Red Rose Bouquet
-                </h3>
-                <p class="font-bold text-lg mb-3">$29.99</p>
-                <button
-                  class="w-full bg-orange-primary text-black py-2 font-medium border-t border-gray-200"
-                >
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-          </div>
-
-
-
-
-          <div class="text-center overflow-hidden">
-            <div class="bg-white shadow rounded-lg">
-              <div class="aspect-square p-0">
-                <img
-                  src="assets/sample-flower-image.png"
-                  alt="Red Rose Bouquet"
-                  class="w-full h-full object-contain"
-                />
-              </div>
-              <div class="px-5 pb-4">
-                <h3 class="font-semibold text-gray-900 mb-2">
-                  Red Rose Bouquet
-                </h3>
-                <p class="font-bold text-lg mb-3">$29.99</p>
-                <button
-                  class="w-full bg-orange-primary text-black py-2 font-medium border-t border-gray-200"
-                >
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-          </div>
-
-
-
-          <div class="text-center overflow-hidden">
-            <div class="bg-white shadow rounded-lg">
-              <div class="aspect-square p-0">
-                <img
-                  src="assets/sample-flower-image.png"
-                  alt="Red Rose Bouquet"
-                  class="w-full h-full object-contain"
-                />
-              </div>
-              <div class="px-5 pb-4">
-                <h3 class="font-semibold text-gray-900 mb-2">
-                  Red Rose Bouquet
-                </h3>
-                <p class="font-bold text-lg mb-3">$29.99</p>
-                <button
-                  class="w-full bg-orange-primary text-black py-2 font-medium border-t border-gray-200"
+                  class="w-full bg-[#E95A08] text-black py-2 font-medium border-t border-gray-200"
                 >
                   Add to Cart
                 </button>
@@ -324,20 +193,20 @@
 
           <div class="text-center overflow-hidden">
             <div class="bg-white shadow rounded-lg">
-              <div class="aspect-square p-0">
+              <div class="aspect-square">
                 <img
                   src="assets/sample-flower-image.png"
                   alt="Red Rose Bouquet"
                   class="w-full h-full object-contain"
                 />
               </div>
-              <div class="px-5 pb-4">
+              <div class="px-4 pb-4">
                 <h3 class="font-semibold text-gray-900 mb-2">
                   Red Rose Bouquet
                 </h3>
                 <p class="font-bold text-lg mb-3">$29.99</p>
                 <button
-                  class="w-full bg-orange-primary text-black py-2 font-medium border-t border-gray-200"
+                  class="w-full bg-[#E95A08] text-black py-2 font-medium border-t border-gray-200"
                 >
                   Add to Cart
                 </button>
@@ -345,29 +214,139 @@
             </div>
           </div>
 
-
-
-          
-
-         
+          <div class="text-center overflow-hidden">
+            <div class="bg-white shadow rounded-lg">
+              <div class="aspect-square">
+                <img
+                  src="assets/sample-flower-image.png"
+                  alt="Red Rose Bouquet"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <div class="px-4 pb-4">
+                <h3 class="font-semibold text-gray-900 mb-2">
+                  Red Rose Bouquet
+                </h3>
+                <p class="font-bold text-lg mb-3">$29.99</p>
+                <button
+                  class="w-full bg-[#E95A08] text-black py-2 font-medium border-t border-gray-200"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
           </div>
+
+          <div class="text-center overflow-hidden">
+            <div class="bg-white shadow rounded-lg">
+              <div class="aspect-square">
+                <img
+                  src="assets/sample-flower-image.png"
+                  alt="Red Rose Bouquet"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <div class="px-4 pb-4">
+                <h3 class="font-semibold text-gray-900 mb-2">
+                  Red Rose Bouquet
+                </h3>
+                <p class="font-bold text-lg mb-3">$29.99</p>
+                <button
+                  class="w-full bg-[#E95A08] text-black py-2 font-medium border-t border-gray-200"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center overflow-hidden">
+            <div class="bg-white shadow rounded-lg">
+              <div class="aspect-square">
+                <img
+                  src="assets/sample-flower-image.png"
+                  alt="Red Rose Bouquet"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <div class="px-4 pb-4">
+                <h3 class="font-semibold text-gray-900 mb-2">
+                  Red Rose Bouquet
+                </h3>
+                <p class="font-bold text-lg mb-3">$29.99</p>
+                <button
+                  class="w-full bg-[#E95A08] text-black py-2 font-medium border-t border-gray-200"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center overflow-hidden">
+            <div class="bg-white shadow rounded-lg">
+              <div class="aspect-square">
+                <img
+                  src="assets/sample-flower-image.png"
+                  alt="Red Rose Bouquet"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <div class="px-4 pb-4">
+                <h3 class="font-semibold text-gray-900 mb-2">
+                  Red Rose Bouquet
+                </h3>
+                <p class="font-bold text-lg mb-3">$29.99</p>
+                <button
+                  class="w-full bg-[#E95A08] text-black py-2 font-medium border-t border-gray-200"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center overflow-hidden">
+            <div class="bg-white shadow rounded-lg">
+              <div class="aspect-square">
+                <img
+                  src="assets/sample-flower-image.png"
+                  alt="Red Rose Bouquet"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <div class="px-4 pb-4">
+                <h3 class="font-semibold text-gray-900 mb-2">
+                  Red Rose Bouquet
+                </h3>
+                <p class="font-bold text-lg mb-3">$29.99</p>
+                <button
+                  class="w-full bg-[#E95A08] text-black py-2 font-medium border-t border-gray-200"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Add more cards as needed using the same block above -->
         </div>
       </div>
     </section>
 
     <!-- Flower & Plants Lover Section -->
-    <section class="py-16 px-8 relative">
-      <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="flex flex-col lg:flex-row items-center">
+    <section class="py-16 px-4 md:px-8 relative">
+      <div class="max-w-7xl mx-auto px-4 md:px-8">
+        <div class="flex flex-col md:flex-row items-center">
           <!-- Image with Badge -->
-          <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-12 relative order-1">
+          <div class="md:w-1/2 mb-8 md:mb-0 md:pr-12 relative order-1">
             <img
               src="assets/flower-store.png"
               alt="Flower Store"
               class="w-full h-auto shadow-lg"
             />
-            <!-- Trusted Badge (visible only on large screens) -->
-            <div class="hidden lg:block absolute -top-10 -right-0">
+            <!-- Trusted Badge (only on desktop) -->
+            <div class="hidden md:block absolute -top-10 -right-0">
               <img
                 src="assets/trusted-badge.png"
                 alt="Trusted Badge"
@@ -377,8 +356,8 @@
           </div>
 
           <!-- Content -->
-          <div class="lg:w-1/2 text-left order-2">
-            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+          <div class="md:w-1/2 text-left order-2">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Flower & Plants Lover
             </h2>
             <ul class="list-disc pl-6 text-lg text-gray-600 space-y-4 mb-8">
@@ -405,12 +384,13 @@
       </div>
     </section>
 
+    <!-- Latest Deals Section -->
     <section class="py-6 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto px-4 md:px-8">
         <!-- Section Header -->
         <div class="text-center mb-12">
-          <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            <span class="text-orange-primary">Latest</span> Deals
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <span class="text-[#E95A08]">Latest</span> Deals
           </h2>
           <p class="text-lg text-gray-600 max-w-2xl mx-auto">
             Indulge your senses with the beauty and fragrance of our fresh
@@ -420,7 +400,7 @@
         </div>
 
         <!-- Deals Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           <!-- Left Column -->
           <div class="space-y-6">
             <!-- Bloom Plant Card -->
@@ -428,7 +408,7 @@
               <img
                 src="assets/deal-bloom.png"
                 alt="Bloom Plant Deal"
-                class="w-full h-48 sm:h-60 object-cover"
+                class="w-full h-48 md:h-60 object-cover"
               />
               <div
                 class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-white text-center"
@@ -448,7 +428,7 @@
               <img
                 src="assets/deal-ana.png"
                 alt="Ana Plant Deal"
-                class="w-full h-48 sm:h-60 object-cover"
+                class="w-full h-48 md:h-60 object-cover"
               />
               <div
                 class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-white text-center"
@@ -469,7 +449,7 @@
             <img
               src="assets/deal-zabo.png"
               alt="Zabo Plant Deal"
-              class="w-full h-48 sm:h-60 lg:h-full object-cover"
+              class="w-full h-48 md:h-full object-cover"
             />
             <div
               class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-white text-center"
@@ -487,7 +467,7 @@
       </div>
     </section>
 
-    <!-- Join Newsletter Section -->
+    <!-- Newsletter Section -->
     <section class="py-20 relative overflow-hidden">
       <div
         class="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -495,34 +475,37 @@
       >
         <div class="absolute inset-0 bg-blue-10 bg-opacity-10"></div>
       </div>
-      <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="relative max-w-4xl mx-auto px-4 lg:px-8 text-center">
         <h2 class="text-3xl lg:text-5xl font-bold text-white mb-4">
           Join the Colorful Bunch
         </h2>
-
-        <div class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto my-6 py-6">
-          <div class="newsletterr-formm">
-            <input type="email" placeholder="Enter your email address" />
-            <button type="submit">Subscribe</button>
-          </div>
+        <div class="flex flex-row gap-0 max-w-lg mx-auto my-6 py-6">
+          <input
+            type="email"
+            placeholder="Enter your email address"
+            class="w-full px-4 py-3 rounded-l-md focus:outline-none"
+          />
+          <button
+            type="submit"
+            class="bg-[#E95A08] text-white px-6 py-3 rounded-r-md font-semibold whitespace-nowrap"
+          >
+            Subscribe
+          </button>
         </div>
       </div>
     </section>
 
-    <footer class="bg-[#fffefe] text-gray-700 px-8 py-4 mx-8">
+    <!-- Footer -->
+    <footer class="bg-[#fffefe] text-gray-700 px-8 py-4 mx-4 md:mx-8">
       <div
-        class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 items-start"
+        class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 items-start"
       >
-        <!-- Logo & Description -->
         <div class="text-gray-700">
           <img src="assets/logo.png" alt="Flower Shop Logo" class="h-10 mb-4" />
           <p class="text-gray-500">
-            Indulge your senses with the beauty and fragrance of our fresh
-            flower shop.
+            Indulge your senses with our fresh flower shop.
           </p>
         </div>
-
-        <!-- Links Column 1 -->
         <div class="flex flex-col gap-2 text-gray-600">
           <a href="#">Home</a>
           <a href="#">About us</a>
@@ -530,8 +513,6 @@
           <a href="#">FAQ</a>
           <a href="#">Contact Us</a>
         </div>
-
-        <!-- Links Column 2 -->
         <div class="flex flex-col gap-2 text-gray-600">
           <a href="#">Features</a>
           <a href="#">Pricing</a>
@@ -539,29 +520,19 @@
           <a href="#">Terms of Service</a>
           <a href="#">Help Center</a>
         </div>
-
-        <!-- Social Icons -->
-        <div class="flex justify-start lg:justify-end gap-4">
-          <a href="#">
-            <img
-              src="assets/icon-linkedin.png"
-              alt="LinkedIn"
-              class="w-8 h-8"
-            />
-          </a>
-          <a href="#">
-            <img src="assets/icon-twitter.png" alt="Twitter" class="w-8 h-8" />
-          </a>
-          <a href="#">
-            <img
-              src="assets/icon-facebook.png"
-              alt="Facebook"
-              class="w-8 h-8"
-            />
-          </a>
-          <a href="#">
-            <img src="assets/icon-youtube.png" alt="YouTube" class="w-8 h-8" />
-          </a>
+        <div class="flex justify-start md:justify-end gap-4">
+          <a href="#"
+            ><img src="assets/icon-linkedin.png" alt="LinkedIn" class="w-8 h-8"
+          /></a>
+          <a href="#"
+            ><img src="assets/icon-twitter.png" alt="Twitter" class="w-8 h-8"
+          /></a>
+          <a href="#"
+            ><img src="assets/icon-facebook.png" alt="Facebook" class="w-8 h-8"
+          /></a>
+          <a href="#"
+            ><img src="assets/icon-youtube.png" alt="YouTube" class="w-8 h-8"
+          /></a>
         </div>
       </div>
     </footer>
