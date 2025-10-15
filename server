@@ -1,0 +1,68 @@
+import socket
+import threading
+
+def handle_client(client_socket, client_address):
+    """Handle individual client connections"""
+    print(f"[NEW CONNECTION] {client_address} connected.")
+    
+    try:
+        while True:
+            # Receive data from client
+            data = client_socket.recv(1024)
+            
+            if not data:
+                print(f"[DISCONNECTED] {client_address} disconnected.")
+                break
+            
+            message = data.decode('utf-8')
+            print(f"[{client_address}] {message}")
+            
+            # Echo back to client
+            response = f"Server received: {message}"
+            client_socket.send(response.encode('utf-8'))
+            
+    except Exception as e:
+        print(f"[ERROR] {client_address}: {e}")
+    finally:
+        client_socket.close()
+
+def start_server():
+    """Start TCP server"""
+    # Server configuration
+    HOST = '0.0.0.0'  # Listen on all interfaces
+    PORT = 5555       # Port to listen on
+    
+    # Create socket
+    server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+    
+    try:
+        # Bind and listen
+        server.bind((HOST, PORT))
+        server.listen(5)
+        
+        print(f"[STARTING] Server is starting...")
+        print(f"[LISTENING] Server is listening on {HOST}:{PORT}")
+        print(f"[INFO] Server IP: 192.168.10.136")
+        print(f"[INFO] Waiting for connections...")
+        
+        while True:
+            # Accept new connection
+            client_socket, client_address = server.accept()
+            
+            # Handle client in new thread
+            thread = threading.Thread(target=handle_client, args=(client_socket, client_address))
+            thread.start()
+            
+            print(f"[ACTIVE CONNECTIONS] {threading.active_count() - 1}")
+            
+    except KeyboardInterrupt:
+        print("\n[SHUTDOWN] Server is shutting down...")
+    except Exception as e:
+        print(f"[ERROR] {e}")
+    finally:
+        server.close()
+        print("[CLOSED] Server closed.")
+
+if __name__ == "__main__":
+    start_server()
