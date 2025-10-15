@@ -17,7 +17,7 @@ def handle_client(client_socket, client_address):
                 break
             
             message = data.decode('utf-8')
-            print(f"\n[CLIENT] {message}")
+            print(f"\nClient message: {message}")
             
             # Auto-respond based on message
             if message.lower() == "hi":
@@ -31,7 +31,7 @@ def handle_client(client_socket, client_address):
             else:
                 response = f"Server received: {message}"
             
-            print(f"[SERVER] {response}")
+            print(f"Server response: {response}")
             print("-" * 50)
             client_socket.send(response.encode('utf-8'))
             
