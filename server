@@ -3,7 +3,9 @@ import threading
 
 def handle_client(client_socket, client_address):
     """Handle individual client connections"""
-    print(f"[NEW CONNECTION] {client_address} connected.")
+    print(f"\n[NEW CONNECTION] {client_address[0]}:{client_address[1]} connected.")
+    print(f"[ACTIVE CONNECTIONS] {threading.active_count() - 1}")
+    print("-" * 50)
     
     try:
         while True:
@@ -11,20 +13,33 @@ def handle_client(client_socket, client_address):
             data = client_socket.recv(1024)
             
             if not data:
-                print(f"[DISCONNECTED] {client_address} disconnected.")
+                print(f"\n[DISCONNECTED] {client_address[0]}:{client_address[1]} disconnected.")
                 break
             
             message = data.decode('utf-8')
-            print(f"[{client_address}] {message}")
+            print(f"\n[CLIENT] {message}")
             
-            # Echo back to client
-            response = f"Server received: {message}"
+            # Auto-respond based on message
+            if message.lower() == "hi":
+                response = "hello"
+            elif message.lower() == "hello":
+                response = "hi there!"
+            elif message.lower() == "how are you":
+                response = "I'm fine, thank you!"
+            elif message.lower() == "bye":
+                response = "Goodbye!"
+            else:
+                response = f"Server received: {message}"
+            
+            print(f"[SERVER] {response}")
+            print("-" * 50)
             client_socket.send(response.encode('utf-8'))
             
     except Exception as e:
-        print(f"[ERROR] {client_address}: {e}")
+        print(f"\n[ERROR] {client_address[0]}:{client_address[1]}: {e}")
     finally:
         client_socket.close()
+        print(f"\n[CONNECTION CLOSED] {client_address[0]}:{client_address[1]}")
 
 def start_server():
     """Start TCP server"""
@@ -53,9 +68,8 @@ def start_server():
             
             # Handle client in new thread
             thread = threading.Thread(target=handle_client, args=(client_socket, client_address))
+            thread.daemon = True  # Make thread daemon so it closes when main program exits
             thread.start()
-            
-            print(f"[ACTIVE CONNECTIONS] {threading.active_count() - 1}")
             
     except KeyboardInterrupt:
         print("\n[SHUTDOWN] Server is shutting down...")
