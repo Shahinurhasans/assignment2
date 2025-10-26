@@ -1,83 +1,52 @@
 import socket
-import threading
+import sctp
 
-def handle_client(client_socket, client_address):
-    """Handle individual client connections"""
-    print(f"\n[NEW CONNECTION] {client_address[0]}:{client_address[1]} connected.")
-    print(f"[ACTIVE CONNECTIONS] {threading.active_count() - 1}")
-    print("-" * 50)
+def start_sctp_client():
+    """Start SCTP client and connect to server"""
+    # Server configuration
+    SERVER_IP = '127.0.0.1'  # Server's IP address
+    SERVER_PORT = 5555             # Server's port
+    
+    # Create SCTP socket
+    client = sctp.sctpsocket_tcp(socket.AF_INET)
     
     try:
+        # Connect to server
+        print(f"[CONNECTING] Connecting to {SERVER_IP}:{SERVER_PORT}...")
+        print(f"[INFO] Protocol: SCTP")
+        client.connect((SERVER_IP, SERVER_PORT))
+        print(f"[CONNECTED] Successfully connected to server!")
+        
         while True:
-            # Receive data from client
-            data = client_socket.recv(1024)
+            # Get message from user
+            message = input("\n[YOU] ")
             
-            if not data:
-                print(f"\n[DISCONNECTED] {client_address[0]}:{client_address[1]} disconnected.")
+            if message.lower() == 'quit':
+                print("[DISCONNECTING] Closing connection...")
                 break
             
-            message = data.decode('utf-8')
-            print(f"\nClient message: {message}")
+            # Send message to server using SCTP
+            client.sctp_send(message.encode('utf-8')) 
+            print(f"Client message: {message}")
             
-            # Auto-respond based on message
-            if message.lower() == "hi":
-                response = "hello"
-            elif message.lower() == "hello":
-                response = "hi there!"
-            elif message.lower() == "how are you":
-                response = "I'm fine, thank you!"
-            elif message.lower() == "bye":
-                response = "Goodbye!"
-            else:
-                response = f"Server received: {message}"
-            
+            # Receive response from server
+            from_addr, flags, msg, notif = client.sctp_recv(1024)
+            response = msg.decode('utf-8')
             print(f"Server response: {response}")
             print("-" * 50)
-            client_socket.send(response.encode('utf-8'))
             
-    except Exception as e:
-        print(f"\n[ERROR] {client_address[0]}:{client_address[1]}: {e}")
-    finally:
-        client_socket.close()
-        print(f"\n[CONNECTION CLOSED] {client_address[0]}:{client_address[1]}")
-
-def start_server():
-    """Start TCP server"""
-    # Server configuration
-    HOST = '192.168.10.136'  # Bind to specific WiFi adapter IP
-    PORT = 5555              # Port to listen on
-    
-    # Create socket
-    server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-    
-    try:
-        # Bind and listen
-        server.bind((HOST, PORT))
-        server.listen(5)
-        
-        print(f"[STARTING] Server is starting...")
-        print(f"[LISTENING] Server is listening on {HOST}:{PORT}")
-        print(f"[INFO] Server IP: 192.168.10.136")
-        print(f"[INFO] Waiting for connections...")
-        print("-" * 50)
-        
-        while True:
-            # Accept new connection
-            client_socket, client_address = server.accept()
-            
-            # Handle client in new thread
-            thread = threading.Thread(target=handle_client, args=(client_socket, client_address))
-            thread.daemon = True  # Make thread daemon so it closes when main program exits
-            thread.start()
-            
-    except KeyboardInterrupt:
-        print("\n[SHUTDOWN] Server is shutting down...")
+    except ConnectionRefusedError:
+        print(f"[ERROR] Could not connect to {SERVER_IP}:{SERVER_PORT}")
+        print("[INFO] Make sure the server is running and firewall allows the connection.")
     except Exception as e:
         print(f"[ERROR] {e}")
+        print("\n[INFO] If SCTP is not supported, make sure:")
+        print("  1. pysctp is installed: pip install pysctp")
+        print("  2. Your OS supports SCTP (Linux has best support)")
+        print("  3. SCTP kernel module is loaded (Linux: lsmod | grep sctp)")
     finally:
-        server.close()
-        print("[CLOSED] Server closed.")
+        client.close()
+        print("[CLOSED] Connection closed.")
 
 if __name__ == "__main__":
-    start_server()
+    start_sctp_client()
